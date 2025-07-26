@@ -1,0 +1,27 @@
+name: just send commits
+
+on:
+  push:
+    paths-ignore:
+        - '**.md'
+        - '.github/**'
+        - '.gitignore'
+  pull_request:
+    paths-ignore:
+        - '**.md'
+        - '.github/**'
+        - '.gitignore'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: do commit stuff
+      uses: Sniddl/discord-commits@v1.6
+      with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        message: "Successful commit to **${{ github.ref_name }}**"
+        template: "avatar-with-link"
+        include-extras: true
