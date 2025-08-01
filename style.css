@@ -7,3 +7,11 @@ body {
   color: black;
   font-family: Verdana;
 }
+@font-face {
+   font-family: Pretendo;
+   src: url(/PRETENDO.TTF);
+}
+@font-face {
+   font-family: SMW;
+   src: url(/SMW.TTF);
+}
