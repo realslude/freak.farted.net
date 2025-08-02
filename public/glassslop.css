@@ -8,3 +8,43 @@
     border: 1px solid rgba(0, 0, 0, 0.25);
     width: max-content;
 }
+.glassline {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1em;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.50);  
+    width: 80%;
+    margin: 2em auto;
+    height: 1em;
+}
+.glasswhite {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.50);  
+    width: max-content;
+}
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: calc(max-content + 1em);
+  padding: 20px;
+  box-align: left;
+  margin: auto;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  size: calc(max-content + 1em);
+  text-align: center;
+  font-size: 1.25em;
+  color: rgb(250, 250, 250);
+}
