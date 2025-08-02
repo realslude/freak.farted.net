@@ -8,6 +8,42 @@
     border: 1px solid rgba(0, 0, 0, 0.25);
     width: max-content;
 }
+.glassborder {
+    /* From https://css.glass */
+    /*background: rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.25);*/
+    background: rgba(128, 128, 128, 0.125);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(128, 128, 128, 0.125);
+    width: max-content;
+    height: max-content;
+    max-width: 12.5em;
+    margin: 1em;
+    padding: 1em;
+}
+.glassnavigate {
+    /* From https://css.glass */
+    /*background: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);*/
+    background: rgba(0, 0, 0, 0.50);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    margin-top: 1em;
+    max-width: calc(max-content + 1em);
+}
 .glassline {
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.5);
@@ -16,7 +52,7 @@
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
     border: 1px solid rgba(255, 255, 255, 0.50);  
-    width: 80%;
+    width: 50%;
     margin: 2em auto;
     height: 1em;
 }
@@ -34,7 +70,7 @@
 nav {
   float: left;
   width: calc(max-content + 1em);
-  padding: 20px;
+  /*padding: 20px;*/
   box-align: left;
   margin: auto;
 }
