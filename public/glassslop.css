@@ -86,10 +86,10 @@ nav ul {
 }
 li a {
     text-decoration: none;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: cursive;
     color: rgb(255, 255, 255);
     filter: drop-shadow(0 0 4px rgb(255, 255, 255, 0.25));
-    transition: all 0.5s;
+    transition: text 0.5s;
 }
 
 li a:hover {
