@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Comic Sans MS';
+  src: url('ComicSans.ttf') format('truetype');
+}
+
 .glass {
     /* From https://css.glass */
     background: rgba(0, 0, 0, 0.25);
@@ -8,6 +13,7 @@
     border: 1px solid rgba(0, 0, 0, 0.25);
     width: max-content;
 }
+
 .glassborder {
     /* From https://css.glass */
     /*background: rgba(0, 0, 0, 0.25);
@@ -26,7 +32,28 @@
     /*max-width: 12.5em;*/
     margin: 1em;
     padding: 1em;
+    /* Make scrollable: */
+    max-height: 25em;    /* Adjust as needed */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(100, 150, 240, 0.5) rgba(0, 0, 0, 0.1);
 }
+/*
+.glassborder::-webkit-scrollbar {
+  width: 12px;
+  background: rgba(0,0,0,0.1);
+}
+
+.glassborder::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 255, 0.5);
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.glassborder::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 255, 0.8);
+}
+*/
 .glassnavigate {
     /* From https://css.glass */
     /*background: rgba(255, 255, 255, 0.25);
@@ -44,6 +71,7 @@
     margin-top: 1em;
     max-width: calc(max-content + 1em);
 }
+
 .glassline {
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.5);
@@ -56,6 +84,7 @@
     margin: 2em auto;
     height: 1em;
 }
+
 .glasswhite {
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.5);
@@ -66,7 +95,7 @@
     border: 1px solid rgba(255, 255, 255, 0.50);  
     width: max-content;
 }
-/* Create two columns/boxes that floats next to each other */
+
 nav {
   float: left;
   width: calc(max-content + 1em);
@@ -75,7 +104,6 @@ nav {
   margin: auto;
 }
 
-/* Style the list inside the menu */
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -86,7 +114,7 @@ nav ul {
 }
 li a {
     text-decoration: none;
-    font-family: cursive;
+    font-family: 'Comic Sans MS';
     color: rgb(255, 255, 255);
     filter: drop-shadow(0 0 4px rgb(255, 255, 255, 0.25));
     transition: text 0.5s;
@@ -111,4 +139,54 @@ li a:hover {
 @keyframes redgreenwave {
     0% { background-position: 0% 0%; }
     100% { background-position: 200% 200%; }
+}
+
+/* Layout for sidebar and main content */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: auto;
+  box-sizing: border-box;
+}
+
+/* Sidebar (nav) styles */
+.sidebar {
+  flex: 0 0 auto;
+  min-width: 260px;
+  max-width: 350px;
+  width: 22vw;
+  padding: 1em 0.5em;
+  box-sizing: border-box;
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1 1 0;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sidebar {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    padding: 0.5em 0;
+  }
+  .main-content {
+    max-width: 100%;
+    padding: 1em 0.5em;
+  }
 }
