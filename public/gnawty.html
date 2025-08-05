@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gnawty</title>
+  <link rel="icon" href="DKC_Gnawty.png">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    body {
+      background: black;
+      position: relative;
+      min-height: 100vh;
+    }
+    .parallax-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: url('DKC_foreground.png') repeat-x center center / cover;
+      will-change: background-position;
+      image-rendering: pixelated;
+    }
+    .parallax-fg {
+      position: fixed;
+      top: -12em; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -2;
+      background: url('DKC_background.png') repeat-x center center / 50% 50%;
+      will-change: background-position;
+      image-rendering: pixelated;
+    }
+    #gnawty {
+      position: absolute;
+      width: 256px;
+      height: auto;
+      left: 50vw;
+      top: 50vh;
+      transform: translate(-50%, -50%);
+      animation: float 2s ease-in-out infinite alternate;
+      user-select: none;
+      cursor: pointer;
+      z-index: 1;
+      image-rendering: optimizeQuality;
+    }
+    @keyframes float {
+      from { transform: translate(-50%, -50%) translateY(0); }
+      to   { transform: translate(-50%, -50%) translateY(-40px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="parallax-bg"></div>
+  <div class="parallax-fg"></div>
+  <img id="gnawty" src="DKC_Gnawty.png" alt="Gnawty">
+  <audio id="gnawty-sound" src="https://www.myinstants.com/media/sounds/kritter.mp3"></audio>
+  <audio id="boss-music" src="https://kappa.vgmsite.com/soundtracks/donkey-kong-country-snes/kyaaoksu/09.%20Bad%20Boss%20Boogie.mp3" autoplay loop></audio>
+  <script>
+    // Parallax scroll effect
+    window.addEventListener('scroll', function() {
+      const scrollY = window.scrollY;
+      document.querySelector('.parallax-bg').style.backgroundPositionY = -(scrollY * 0.3) + 'px';
+      document.querySelector('.parallax-fg').style.backgroundPositionY = -(scrollY * 0.6) + 'px';
+    });
+
+    // Gnawty sound
+    document.getElementById('gnawty').addEventListener('click', function() {
+      var sound = document.getElementById('gnawty-sound');
+      sound.currentTime = 0;
+      sound.play();
+    });
+
+    // Attempt to play boss music on load (may require user interaction in some browsers)
+    window.addEventListener('DOMContentLoaded', function() {
+      var music = document.getElementById('boss-music');
+      music.volume = 0.5;
+      music.play().catch(function(){ /* ignore autoplay errors */ });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="DKC_Gnawty.png">
+    <link rel="stylesheet" href="mainslop.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <title>Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="layout">
+    <div id="sidebar-placeholder" class="sidebar"></div>
+    <div class="main-content">
+      <header>
+        <div class="glass">
+          <h1>SRB2: All-Stars Development</h1>
+          <h2>doo doo fart</h2>
+        </div>
+      </header>
+      <div class="glass">
+        <p>Ill write something later..... cant be bothered....
+      </div>
+    </div>
+  </div>
+  <script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('sidebar-placeholder').innerHTML = html);
+  </script>
+</body>
+</html>
