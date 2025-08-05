@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="DKC_Gnawty.png">
     <link rel="stylesheet" href="mainslop.css">
+    <link rel="stylesheet" href="sidebar.css">
     <title>Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -28,30 +29,7 @@
 </head>
 <body>
   <div class="layout">
-    <div class="sidebar">
-      <nav>
-        <ul>
-            <div class="glassnavigate">
-                <div class="glassborder"
-                    <li><li>
-                    <a href="/">Shigeru Miyamoto</a></li>
-                    <li><a href="/srb2">SRB2 Projects</a></li>
-                    <li><a href="https://youtu.be/dSVGVHmt1AA?si=Rw_6gwDbX2HnMJE8" target="_blank">SMB3 - Ending theme poo poo bla</a></li>
-                    <li><a href="https://youtu.be/VpD7mrL7UX0?si=yQwZ0p69aO-tQTh8" target="_blank">hom</a></li>
-                </div>
-            </div>
-            <div class="glassnavigate">
-                <div class="glassborder">
-                    <li><a href="https://music.youtube.com/watch?v=jRKR8fDaLZo&si=8Ro-hGsoIyL_Hgh0"><img src="DKC_Gnawty.png" alt="Gnawty rip" style="width: 12.5em;height:max-content;"></a></li>
-                    <li><a href="https://music.youtube.com/watch?v=jRKR8fDaLZo&si=8Ro-hGsoIyL_Hgh0"><img src="DKC_Gnawty.png" alt="Gnawty rip" style="width: 12.5em;height:max-content;"></a></li>
-                    <li><a href="https://music.youtube.com/watch?v=jRKR8fDaLZo&si=8Ro-hGsoIyL_Hgh0"><img src="DKC_Gnawty.png" alt="Gnawty rip" style="width: 12.5em;height:max-content;"></a></li>
-                    <li><a href="https://music.youtube.com/watch?v=jRKR8fDaLZo&si=8Ro-hGsoIyL_Hgh0"><img src="DKC_Gnawty.png" alt="Gnawty rip" style="width: 12.5em;height:max-content;"></a></li>
-                    <li><a href="https://music.youtube.com/watch?v=jRKR8fDaLZo&si=8Ro-hGsoIyL_Hgh0"><img src="DKC_Gnawty.png" alt="Gnawty rip" style="width: 12.5em;height:max-content;"></a></li>
-                </div>
-            </div>
-        </ul>
-      </nav>
-    </div>
+    <div id="sidebar-placeholder" class="sidebar"></div>
     <div class="main-content">
       <header>
         <div class="glass">
@@ -84,5 +62,10 @@
       </div>
     </div>
   </div>
+  <script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('sidebar-placeholder').innerHTML = html);
+  </script>
 </body>
 </html>

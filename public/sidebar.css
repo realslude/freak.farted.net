@@ -1,0 +1,89 @@
+/* Layout for sidebar and main content */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: auto;
+  box-sizing: border-box;
+}
+
+/* Sidebar (nav) styles */
+.sidebar {
+  flex: 0 0 auto;
+  min-width: 260px;
+  max-width: 350px;
+  width: 22vw;
+  padding: 1em 0.5em;
+  box-sizing: border-box;
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1 1 0;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.glassborder {
+    /* From https://css.glass */
+    /*background: rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.25);*/
+    background: rgba(128, 128, 128, 0.125);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(128, 128, 128, 0.125);
+    width: 300px;
+    height: max-content;
+    /*max-width: 12.5em;*/
+    margin: 1em;
+    padding: 1em;
+    /* Make scrollable: */
+    max-height: 25em;    /* Adjust as needed */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(100, 150, 240, 0.5) rgba(0, 0, 0, 0.1);
+}
+/*
+.glassborder::-webkit-scrollbar {
+  width: 12px;
+  background: rgba(0,0,0,0.1);
+}
+
+.glassborder::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 255, 0.5);
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.glassborder::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 255, 0.8);
+}
+*/
+.glassnavigate {
+    /* From https://css.glass */
+    /*background: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);*/
+    background: rgba(0, 0, 0, 0.50);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    margin-top: 1em;
+    max-width: calc(max-content + 1em);
+}
